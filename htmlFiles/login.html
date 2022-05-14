@@ -50,7 +50,7 @@
                     // $.post("http://localhost:8000/api/authenticate",{email:event.target[0].value,password:event.target[1].value},function(data){
                     //     console.log("response is",data);
                     // })
-                    $.post('https://testingreunion-apis.herokuapp.com/api/authenticate',   // url
+                    $.post('https://testingreunion-apis.herokuapp.com//api/authenticate',   // url
                     {email:event.target[0].value,name:event.target[1].value,password:event.target[2].value}, // data to be submit
                     function(data, status, jqXHR) {// success callback
                         console.log('status: ' + status + ', data: ' + data,"jq: ",jqXHR);

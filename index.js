@@ -57,7 +57,7 @@ app.use(bodyParser.json({ limit: "2mb" })); // here the data sent by kind
 app.get('/functions', (req, res) => {  
     // Print the name of the file for which request is made.
     console.log("Request for demo file received.");
-    fs.readFile(__dirname+"/htmlFiles/functions.html",function(error, data){
+    fs.readFile("./htmlFiles/functions.html",function(error, data){
       if (error) {
         res.writeHead(404);
         res.write('Contents you are looking for-not found');
