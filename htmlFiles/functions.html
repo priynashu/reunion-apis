@@ -63,7 +63,7 @@
     <script>
         const follow=()=>{
             console.log("follow",localStorage.getItem("email"));
-            $.post('http://localhost:8000/api/follow/627eae4f8b68569100c6335c',   // url
+            $.post('https://testingreunion-apis.herokuapp.com/api/follow/627eae4f8b68569100c6335c',   // url
                     {email:localStorage.getItem("email")}, // data to be submit
                     function(data, status, jqXHR) {// success callback
                         console.log('status: ' + status + ', data: ' + data,"jq: ",jqXHR);
@@ -71,14 +71,14 @@
         }
         const unfollow=()=>{
             console.log("unFollow");
-            $.post('http://localhost:8000/api/unfollow/627eae4f8b68569100c6335c',   // url
+            $.post('https://testingreunion-apis.herokuapp.com/api/unfollow/627eae4f8b68569100c6335c',   // url
                     {email:localStorage.getItem("email")}, // data to be submit
                     function(data, status, jqXHR) {// success callback
                         console.log('status: ' + status + ', data: ' + data,"jq: ",jqXHR);
         })
         }
         const getUserDetails=()=>{
-            $.get(`http://localhost:8000/api/${localStorage.getItem('email')}`,function(data){
+            $.get(`https://testingreunion-apis.herokuapp.com/api/${localStorage.getItem('email')}`,function(data){
                 console.log("user details",data);
             })
         }
@@ -89,7 +89,7 @@
                     const title = event.target[0].value
                     const description = event.target[1].value
                     const email = localStorage.getItem("email")
-                    $.post('http://localhost:8000/api/posts',   // url
+                    $.post('https://testingreunion-apis.herokuapp.com/api/posts',   // url
                     {title:title,description:description,email}, // data to be submit
                     function(data, status, jqXHR) {// success callback
                         console.log('status: ' + status + ', data: ' + data,"jq: ",jqXHR);
@@ -105,7 +105,7 @@
             // console.log("inside delete");
             
             $.ajax({
-            url: 'http://localhost:8000/api/posts/627eca304247f6cd6c93ccf0',
+            url: 'https://testingreunion-apis.herokuapp.com/api/posts/627eca304247f6cd6c93ccf0',
             type: 'DELETE',
             success: function (result) {
                 console.log("delete post result",result);
@@ -115,11 +115,11 @@
     }
     const likePost=()=>{
         console.log("inside like");
-        $.post('http://localhost:8000/api/like/627ec9bf4247f6cd6c93cce4')  
+        $.post('https://testingreunion-apis.herokuapp.com/api/like/627ec9bf4247f6cd6c93cce4')  
     }
     const unlikePost=()=>{
         console.log("inside unlike");
-        $.post('http://localhost:8000/api/unlike/627ec9bf4247f6cd6c93cce4')  
+        $.post('https://testingreunion-apis.herokuapp.com/api/unlike/627ec9bf4247f6cd6c93cce4')  
     }
     const postComment=()=>{
         var form = document.getElementById("CommentForm")
@@ -127,7 +127,7 @@
             event.preventDefault()
             // console.log("inside post comment",event.target[0].value);
             const comment = event.target[0].value
-            $.post('http://localhost:8000/api/comment/627ec9bf4247f6cd6c93cce4',   // url
+            $.post('https://testingreunion-apis.herokuapp.com/api/comment/627ec9bf4247f6cd6c93cce4',   // url
                     {comment:comment}, // data to be submit
                     function(data, status, jqXHR) {// success callback
                         console.log('status: ' + status + ', data: ' + data,"jq: ",jqXHR);
@@ -140,11 +140,11 @@
     }
     const getSinglePost =()=>{
             console.log("inside single post");
-            $.get('http://localhost:8000/api/posts/627ec9bf4247f6cd6c93cce4')       
+            $.get('https://testingreunion-apis.herokuapp.com/api/posts/627ec9bf4247f6cd6c93cce4')       
         }
         const allPosts = ()=>{
             console.log("inside all post");
-            $.get('http://localhost:8000/api/all_posts')
+            $.get('https://testingreunion-apis.herokuapp.com/api/all_posts')
         }
     </script>
 </body>
