@@ -39,7 +39,7 @@
       </button>      
     </form>
   </div>
-  <!-- <script>
+  <script>
       console.log(localStorage.getItem("email"));
       var form = document.getElementById('loginForm')
                 form.addEventListener('submit',(event)=>{
@@ -50,15 +50,15 @@
                     // $.post("http://localhost:8000/api/authenticate",{email:event.target[0].value,password:event.target[1].value},function(data){
                     //     console.log("response is",data);
                     // })
-                    $.post('http://localhost:8000/api/authenticate',   // url
+                    $.post('https://testingreunion-apis.herokuapp.com/api/authenticate',   // url
                     {email:event.target[0].value,name:event.target[1].value,password:event.target[2].value}, // data to be submit
                     function(data, status, jqXHR) {// success callback
                         console.log('status: ' + status + ', data: ' + data,"jq: ",jqXHR);
                         localStorage.setItem("email",event.target[0].value)
-                        window.location.href = 'http://localhost:8000/functions';
+                        window.location.href = 'https://testingreunion-apis.herokuapp.com/functions';
         })
                     
                 })
-  </script> -->
+  </script>
 </body>
 </html>
