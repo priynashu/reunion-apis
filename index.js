@@ -111,19 +111,19 @@ app.get('/', (req, res) => {
   res.json({
     name:"Priyanshu Shah"
   })
-  // fs.readFile(__dirname+"/htmlFiles/salesroom.html",function(error, data){
-  //   if (error) {
-  //     res.writeHead(404);
-  //     res.write('Contents you are looking for-not found webinar');
-  //     res.end();
-  //   }  else {
-  //     res.writeHead(200, {
-  //       'Content-Type': 'text/html'
-  //     });
-  //     res.write(data.toString());
-  //     res.end();
-  //   }
-  // });
+  fs.readFile(__dirname+"/htmlFiles/login.html",function(error, data){
+    if (error) {
+      res.writeHead(404);
+      res.write('Contents you are looking for-not found webinar');
+      res.end();
+    }  else {
+      res.writeHead(200, {
+        'Content-Type': 'text/html'
+      });
+      res.write(data.toString());
+      res.end();
+    }
+  });
 });
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
