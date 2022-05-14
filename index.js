@@ -54,23 +54,23 @@ app.use(bodyParser.json({ limit: "2mb" })); // here the data sent by kind
     }
   });
 });
-// app.get('/functions', (req, res) => {  
-//     // Print the name of the file for which request is made.
-//     console.log("Request for demo file received.");
-//     fs.readFile(__dirname+"/htmlFiles/functions.html",function(error, data){
-//       if (error) {
-//         res.writeHead(404);
-//         res.write('Contents you are looking for-not found');
-//         res.end();
-//       }  else {
-//         res.writeHead(200, {
-//           'Content-Type': 'text/html'
-//         });
-//         res.write(data.toString());
-//         res.end();
-//       }
-//     });
-//   });
+app.get('/functions', (req, res) => {  
+    // Print the name of the file for which request is made.
+    console.log("Request for demo file received.");
+    fs.readFile(__dirname+"/htmlFiles/functions.html",function(error, data){
+      if (error) {
+        res.writeHead(404);
+        res.write('Contents you are looking for-not found');
+        res.end();
+      }  else {
+        res.writeHead(200, {
+          'Content-Type': 'text/html'
+        });
+        res.write(data.toString());
+        res.end();
+      }
+    });
+  });
 
   // var crypto = require("crypto-js");
   
