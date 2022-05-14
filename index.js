@@ -81,8 +81,8 @@ app.use('/api',api);
 //dont need app.use every time
 
 //PORT
-// const port = process.env.PORT || 8000;
-const port = 8000
+const port = process.env.PORT || 8000;
+// const port = 8000
 app.listen(port, () => {
   console.log("server is successfully running on", port);
 });
