@@ -108,7 +108,9 @@ var fs = require('fs');
 app.get('/', (req, res) => {  
   // Print the name of the file for which request is made.
   // console.log("Request for salesroom file.");
-  res.json(<h1>Priyanshu Shah is here</h1>)
+  res.json({
+    name:"Priyanshu Shah"
+  })
   // fs.readFile(__dirname+"/htmlFiles/salesroom.html",function(error, data){
   //   if (error) {
   //     res.writeHead(404);
