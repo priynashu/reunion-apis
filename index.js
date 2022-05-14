@@ -37,19 +37,20 @@ app.use(bodyParser.json({ limit: "2mb" })); // here the data sent by kind
 app.get('/', (req, res) => {  
     // Print the name of the file for which request is made.
     console.log("Request for demo file received.",__dirname);
-    fs.readFile("./htmlFiles/index.html",function(error, data){
-      if (error) {
-        res.writeHead(404);
-        res.write('Contents you are looking for-not found');
-        res.end();
-      }  else {
-        res.writeHead(200, {
-          'Content-Type': 'text/html'
-        });
-        res.write(data.toString());
-        res.end();
-      }
-    });
+    res.json(<h1>Priyanshu Shah Is here</h1>)
+    // fs.readFile("./htmlFiles/index.html",function(error, data){
+    //   if (error) {
+    //     res.writeHead(404);
+    //     res.write('Contents you are looking for-not found');
+    //     res.end();
+    //   }  else {
+    //     res.writeHead(200, {
+    //       'Content-Type': 'text/html'
+    //     });
+    //     res.write(data.toString());
+    //     res.end();
+    //   }
+    // });
   });
 // app.get('/functions', (req, res) => {  
 //     // Print the name of the file for which request is made.
@@ -78,8 +79,7 @@ app.use('/api',api);
 //dont need app.use every time
 
 //PORT
-// const port = process.env.PORT || 8000;
-const port = 8000
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log("server is successfully running on", port);
 });
